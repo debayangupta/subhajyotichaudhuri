@@ -1,1 +1,220 @@
-Hello, world. (Subha)
+<!DOCTYPE html>
+<html>
+ 
+<head>
+  <meta charset="utf-8"/>
+  <base target="_blank">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Subhajyoti Chaudhuri</title>
+
+  <link rel="shortcut icon" href="favicon.ico"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+  <script src="https://code.jquery.com/jquery-2.1.3.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script src="jquery.scrollify.min.js"></script>
+  
+  <style type="text/css">
+
+body {
+  font-size:16px; margin:0;padding:0;
+  /** /
+  scroll-snap-type: mandatory;
+  scroll-behavior: smooth;
+  scroll-snap-points-y: repeat(100%);
+  in bg, index, etc. scroll-snap-coordinate:0 0;
+  /**/
+}
+a,button {outline:0!important}
+.equalizer {display:flex;justify-content:space-between;}
+.center {text-align: center;}
+.hidden {display:none;visibility:hidden;}
+.bg, section, body {min-width: 1000px}
+section {padding: 50px 0px}
+
+/* navbar */
+.navbar {
+  border: none; box-shadow: none;
+  background: transparent;
+  height:70px;
+  transition: background 1s;
+}
+.navbar .navbar-brand {
+  font-size: 28px; font-weight: bold;
+  color: white; text-shadow:none;
+  margin:10px 20px 0 0;
+}
+.navbar li {margin-top: 20px;}
+.navbar .nav-pills a {color: white; font-weight: bold; padding: 5px 10px}
+.navbar .nav-pills li:hover a {background: none; text-decoration: underline;}
+.navbar .nav-pills li.active a {background: white;color: black; text-decoration: none;}
+.mod-nav {background:#333;}
+
+.navbar-text {margin-top: 14px;}
+.navbar-text .navbar-link {
+  color: white; font-size:18px;
+  display: inline-block;
+  padding: 7px;
+  background-color: #555;
+  border-radius: 20px;
+  text-decoration: none!important;
+  transition: background-color 1s;
+}
+.navbar-text .navbar-link:hover {background-color:#3399ff;}
+
+/* main headshot photo in first section */
+#pic {float: left; margin: 0 30px 0 0;}
+#pic img {height: 200px}
+
+/* scroll suggestion at bottom of first section */
+.scroll-suggest {
+  position: absolute; bottom: 0; z-index: 2;
+  display: block; color: #DDD;
+  width: 100%; text-align: center;
+  font-size: 30px; line-height: 30px;
+}
+.scroll-suggest span {cursor: pointer;}
+
+
+/* Background images for sections 
+  Modified from work.debayangupta;
+  clean up and fix after design is finalised
+*/
+.bg {
+  min-height: 100vh; padding:1px 0px;
+  height: auto; display: block;
+}
+.bg>h2 {font-size:70px;margin-top:15vh;text-align:center;}
+
+/* sections */
+#index        {background:#FFF; color: #000; padding: 0}
+#research     {background:#BBB; color: #444;} #research h2     {color: #444}
+#publications {background:#555; color: #AAA;} #publications h2 {color: #AAA}
+#personal     {background:#111; color: #555;} #personal h2     {color: #555}
+
+/* first bit top area */
+#index #top-area {
+  background-attachment:fixed;background-position:bottom;background-size:cover;
+  display: block; padding:1px 0px;
+  min-height: 300px;
+  background-image:url('bg.jpg');
+}
+
+  </style>
+  <script type="text/javascript">
+$(function() {
+
+  // animate clicked intra-page navigation
+  $("#navnav a[href^='#']").on('click', function(e) {
+    e.preventDefault();
+    var hash = this.hash;
+    $('html, body').animate({scrollTop: $(hash).offset().top}, 900, function(){
+      window.location.hash = hash;
+    });
+  });
+
+  // navbar background after scroling past top
+  $(document).scroll(function(){
+    if ($(this).scrollTop() > 200) {
+        $('.navbar').addClass("mod-nav");
+    } else {
+        $('.navbar').removeClass("mod-nav");
+    }
+  });
+  $(document).trigger('scroll'); // in case someone opens a # directly
+
+  // set height of top background
+  // could play with css flex, align-items, etc., but this seems safer
+  $("#top-area").height($(window).height() - $("#index section").outerHeight());
+
+  // scroll directly to sections
+  $.scrollify({ section : ".bg" });
+});
+
+  </script>
+</head> 
+
+<body data-offset="70" data-spy="scroll" data-target=".main-spy">
+
+<nav class="main-spy navbar navbar-default navbar-fixed-top navbar-inverse">
+<div class="container">
+
+  <div class="navbar-header"><a target="_self" class="navbar-brand" href="#">Subhajyoti Chaudhuri</a></div>
+  <div class="navbar-text pull-right">
+    <a href="CV.pdf" class="navbar-link">CV</a>
+  </div>
+  <ul id="navnav" class="nav nav-pills">
+    <li><a target="_self" href="#index">Home</a></li>
+    <li><a target="_self" href="#research">Research</a></li>
+    <li><a target="_self" href="#publications">Publications</a></li>
+    <li><a target="_self" href="#personal">Personal</a></li>
+  </ul>
+
+</div>
+</nav>
+
+<!-- Page index -->
+<div id="index" class="bg">
+<div id="top-area"></div>
+<section class="container">
+
+<figure id="pic"><img alt="Subhajyoti Chaudhuri" src="subhajyotichaudhuri.jpg" class="img-circle"></figure>
+
+<p class="lead">I'm a third-year doctoral student in the 
+  <a href="http://www.chem.yale.edu/~batista/">Batista Group</a> at
+  <a href="http://www.yale.edu/">Yale University</a>.
+  Contact me at <a href="mailto:subhajyoti.chaudhuri@yale.edu">subhajyoti.chaudhuri@yale.edu</a>.
+</p>
+
+<p>Text</p>
+</section>
+
+<div class="scroll-suggest"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true" onclick="$.scrollify.next();"></span></div>
+</div>
+
+<!-- Research -->
+<div id="research" class="bg"><h2>Research</h2>
+<section class="container">
+<p>Research</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate neque eget massa aliquet mollis. Fusce facilisis dolor nec imperdiet elementum. Aliquam erat volutpat. Etiam viverra hendrerit elit, ultrices scelerisque quam. Nulla facilisi. In hac habitasse platea dictumst. Nulla tristique velit ac leo tristique rutrum. Praesent sagittis porta ante, at volutpat nisl facilisis ac. Integer ut posuere ligula, in volutpat ante. Donec eget sollicitudin dui. Proin velit eros, rutrum ac placerat ac, porta molestie nunc. Proin tortor justo, imperdiet at ornare at, lobortis et enim. Nam vitae hendrerit nulla. Quisque eget nisl porttitor, gravida massa ut, euismod quam. Etiam at justo pharetra, vulputate erat at, ultrices nisi.</p>
+
+<p>Curabitur sed blandit elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum vitae tincidunt leo, eget malesuada nisl. Aenean nec eros quis nulla tristique viverra nec imperdiet tellus. Nulla venenatis pellentesque odio et ornare. Donec in lacinia arcu, nec tempor sem. Mauris malesuada, mi in pulvinar auctor, nibh felis suscipit massa, eget vehicula urna ligula in ex. Quisque dui diam, scelerisque sit amet ligula et, malesuada venenatis nulla. Aenean ultrices tellus est, in tincidunt urna mollis in. Sed lorem nunc, sodales eget consequat vitae, condimentum et leo. Pellentesque tempor eget nulla at bibendum. Nulla ultricies, orci vitae rhoncus hendrerit, nisi ante pulvinar est, ac aliquet lectus lorem et ipsum.</p>
+
+</section>
+</div>
+
+
+<!-- Publications -->
+<div id="publications" class="bg"><h2>Publications</h2>
+<section class="container">
+<p>Publications</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate neque eget massa aliquet mollis. Fusce facilisis dolor nec imperdiet elementum. Aliquam erat volutpat. Etiam viverra hendrerit elit, ultrices scelerisque quam. Nulla facilisi. In hac habitasse platea dictumst. Nulla tristique velit ac leo tristique rutrum. Praesent sagittis porta ante, at volutpat nisl facilisis ac. Integer ut posuere ligula, in volutpat ante. Donec eget sollicitudin dui. Proin velit eros, rutrum ac placerat ac, porta molestie nunc. Proin tortor justo, imperdiet at ornare at, lobortis et enim. Nam vitae hendrerit nulla. Quisque eget nisl porttitor, gravida massa ut, euismod quam. Etiam at justo pharetra, vulputate erat at, ultrices nisi.</p>
+
+<p>Curabitur sed blandit elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum vitae tincidunt leo, eget malesuada nisl. Aenean nec eros quis nulla tristique viverra nec imperdiet tellus. Nulla venenatis pellentesque odio et ornare. Donec in lacinia arcu, nec tempor sem. Mauris malesuada, mi in pulvinar auctor, nibh felis suscipit massa, eget vehicula urna ligula in ex. Quisque dui diam, scelerisque sit amet ligula et, malesuada venenatis nulla. Aenean ultrices tellus est, in tincidunt urna mollis in. Sed lorem nunc, sodales eget consequat vitae, condimentum et leo. Pellentesque tempor eget nulla at bibendum. Nulla ultricies, orci vitae rhoncus hendrerit, nisi ante pulvinar est, ac aliquet lectus lorem et ipsum.</p>
+
+</section>
+</div>
+
+
+<!-- Personal -->
+<div id="personal" class="bg"><h2>Personal</h2>
+<section class="container">
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate neque eget massa aliquet mollis. Fusce facilisis dolor nec imperdiet elementum. Aliquam erat volutpat. Etiam viverra hendrerit elit, ultrices scelerisque quam. Nulla facilisi. In hac habitasse platea dictumst. Nulla tristique velit ac leo tristique rutrum. Praesent sagittis porta ante, at volutpat nisl facilisis ac. Integer ut posuere ligula, in volutpat ante. Donec eget sollicitudin dui. Proin velit eros, rutrum ac placerat ac, porta molestie nunc. Proin tortor justo, imperdiet at ornare at, lobortis et enim. Nam vitae hendrerit nulla. Quisque eget nisl porttitor, gravida massa ut, euismod quam. Etiam at justo pharetra, vulputate erat at, ultrices nisi.</p>
+
+<p>Curabitur sed blandit elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum vitae tincidunt leo, eget malesuada nisl. Aenean nec eros quis nulla tristique viverra nec imperdiet tellus. Nulla venenatis pellentesque odio et ornare. Donec in lacinia arcu, nec tempor sem. Mauris malesuada, mi in pulvinar auctor, nibh felis suscipit massa, eget vehicula urna ligula in ex. Quisque dui diam, scelerisque sit amet ligula et, malesuada venenatis nulla. Aenean ultrices tellus est, in tincidunt urna mollis in. Sed lorem nunc, sodales eget consequat vitae, condimentum et leo. Pellentesque tempor eget nulla at bibendum. Nulla ultricies, orci vitae rhoncus hendrerit, nisi ante pulvinar est, ac aliquet lectus lorem et ipsum.</p>
+
+</section>
+</div>
+
+
+
+</body> 
+ 
+</html> 
+ 
+<!-- Debayan Gupta -->

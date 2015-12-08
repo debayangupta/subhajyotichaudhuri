@@ -32,7 +32,6 @@ a,button {outline:0!important}
 .center {text-align: center;}
 .hidden {display:none;visibility:hidden;}
 .bg, section, body {min-width: 1000px}
-section {padding: 50px 0px}
 dt:not(:first-child) {margin-top: 20px}
 
 /* navbar */
@@ -65,6 +64,31 @@ dt:not(:first-child) {margin-top: 20px}
 }
 .navbar-text .navbar-link:hover {background-color:#3399ff;}
 
+/* Background images for sections 
+  Modified from work.debayangupta;
+  clean up and fix after design is finalised
+*/
+.bg {
+  min-height: 100vh; padding:1px 0px;
+  height: auto; display: block;
+}
+
+/* sections */
+section {padding: 50px 0px}
+section h2 {font-size:70px;margin:70px 0 50px 0;text-align:center;}
+#index        {background:#FFF; color: #000; padding: 0}
+#research     {background:#BBB; color: #444;} #research h2     {color: #444}
+#publications {background:#555; color: #AAA;} #publications h2 {color: #AAA}
+#personal     {background:#111; color: #777;} #personal h2     {color: #777}
+
+/* first bit top area */
+#index #top-area {
+  background-attachment:fixed;background-position:bottom;background-size:cover;
+  display: block; padding:1px 0px;
+  min-height: 300px;
+  background-image:url('bg.jpg');
+}
+
 /* main headshot photo in first section */
 #pic {float: left; margin: 0 30px 0 0;overflow: auto; min-height: 200px}
 #pic img {height: 200px}
@@ -78,30 +102,6 @@ dt:not(:first-child) {margin-top: 20px}
 }
 .scroll-suggest span {cursor: pointer;}
 
-
-/* Background images for sections 
-  Modified from work.debayangupta;
-  clean up and fix after design is finalised
-*/
-.bg {
-  min-height: 100vh; padding:1px 0px;
-  height: auto; display: block;
-}
-.bg>h2 {font-size:70px;margin-top:15vh;text-align:center;}
-
-/* sections */
-#index        {background:#FFF; color: #000; padding: 0}
-#research     {background:#BBB; color: #444;} #research h2     {color: #444}
-#publications {background:#555; color: #AAA;} #publications h2 {color: #AAA}
-#personal     {background:#111; color: #777;} #personal h2     {color: #777}
-
-/* first bit top area */
-#index #top-area {
-  background-attachment:fixed;background-position:bottom;background-size:cover;
-  display: block; padding:1px 0px;
-  min-height: 300px;
-  background-image:url('bg.jpg');
-}
 
   </style>
   <script type="text/javascript">
@@ -177,8 +177,9 @@ $(function() {
 </div>
 
 <!-- Research -->
-<div id="research" class="bg"><h2>Research</h2>
+<div id="research" class="bg">
 <section class="container">
+<h2>Research</h2>
 
 <p>Sustainable production of energy and simultaneous preservation of the environment are among the primary challenges facing humanity today. Recent developments in functional materials hold great promise for developing novel solutions in this area (e.g., solar cells, light emitting diodes, etc.). In order to rationally design such materials a detailed insight into the underlying electron transfer (ET) mechanisms is required.</p>
 
@@ -191,9 +192,9 @@ $(function() {
 
 
 <!-- Publications -->
-<div id="publications" class="bg"><h2>Publications</h2>
+<div id="publications" class="bg">
 <section class="container">
-<p>Publications</p>
+<h2>Publications</h2>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate neque eget massa aliquet mollis. Fusce facilisis dolor nec imperdiet elementum. Aliquam erat volutpat. Etiam viverra hendrerit elit, ultrices scelerisque quam. Nulla facilisi. In hac habitasse platea dictumst. Nulla tristique velit ac leo tristique rutrum. Praesent sagittis porta ante, at volutpat nisl facilisis ac. Integer ut posuere ligula, in volutpat ante. Donec eget sollicitudin dui. Proin velit eros, rutrum ac placerat ac, porta molestie nunc. Proin tortor justo, imperdiet at ornare at, lobortis et enim. Nam vitae hendrerit nulla. Quisque eget nisl porttitor, gravida massa ut, euismod quam. Etiam at justo pharetra, vulputate erat at, ultrices nisi.</p>
 
@@ -204,8 +205,9 @@ $(function() {
 
 
 <!-- Personal -->
-<div id="personal" class="bg"><h2>Personal</h2>
+<div id="personal" class="bg">
 <section class="container">
+<h2>Personal</h2>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate neque eget massa aliquet mollis. Fusce facilisis dolor nec imperdiet elementum. Aliquam erat volutpat. Etiam viverra hendrerit elit, ultrices scelerisque quam. Nulla facilisi. In hac habitasse platea dictumst. Nulla tristique velit ac leo tristique rutrum. Praesent sagittis porta ante, at volutpat nisl facilisis ac. Integer ut posuere ligula, in volutpat ante. Donec eget sollicitudin dui. Proin velit eros, rutrum ac placerat ac, porta molestie nunc. Proin tortor justo, imperdiet at ornare at, lobortis et enim. Nam vitae hendrerit nulla. Quisque eget nisl porttitor, gravida massa ut, euismod quam. Etiam at justo pharetra, vulputate erat at, ultrices nisi.</p>
 

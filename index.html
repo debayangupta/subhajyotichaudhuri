@@ -102,6 +102,50 @@ section h2 {font-size:70px;margin:70px 0 50px 0;text-align:center;}
 }
 .scroll-suggest span {cursor: pointer;}
 
+/* 3D rotation effect */
+.thing {
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  position: relative;
+  cursor: default;
+  overflow: hidden;
+  text-align: center;
+}
+
+.thing-data {
+  width: 100%;height: 100%;
+  border-radius: 50%;
+  transition: all 1s ease-in-out;
+  transform-style: preserve-3d;
+  background-color: #EEE;
+}
+.thing:hover .thing-data {transform: rotate3d(0,1,0,-180deg);}
+
+.thing-data > div {
+  position: absolute; display: block;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.thing-data .thing-data-back {
+  transform: rotate3d(0,1,0,180deg);
+  color: #FFF; background: #000; padding: 20px;
+  box-shadow: 0 0 0 10px rgba(255,255,255,0.3) inset;
+}
+
+.thing-data h3 {
+  margin: 45px 0 5px 0;
+  text-transform: uppercase;
+  font-size: 14px; letter-spacing: 2px;
+}
+
+.thing-data p {
+  padding-top: 5px; 
+  font-style: italic; font-size: 12px;
+  border-top: 1px solid rgba(255,255,255,0.5);
+}
 
   </style>
   <script type="text/javascript">
@@ -161,7 +205,13 @@ $(function() {
 <div id="top-area"></div>
 <section class="container">
 
-<figure id="pic"><img alt="Subhajyoti Chaudhuri" src="subhajyotichaudhuri.jpg" class="img-circle"></figure>
+<figure id="pic" class="thing">
+<div class="thing-data">
+  <div class="thing-data-front"><img alt="Subhajyoti Chaudhuri" src="subhajyotichaudhuri.jpg"></div>
+  <div class="thing-data-back"><h3>Akshay Deshmukh</h3><p>United Kingdom</p></div>  
+</div>
+</figure>
+
 
 <p class="lead">I'm a third-year doctoral student in the 
   <a href="http://www.chem.yale.edu/~batista/">Batista Group</a> at

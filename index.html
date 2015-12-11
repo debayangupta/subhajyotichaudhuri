@@ -174,7 +174,10 @@ $(function() {
 
   // set height of top background
   // could play with css flex, align-items, etc., but this seems safer
-  $("#top-area").height($(window).height() - $("#index section").outerHeight());
+  $( window ).resize(function() {
+    $("#top-area").height($(window).height() - $("#index section").outerHeight());
+  });
+  $(document).trigger('resize');
 
   // scroll directly to sections
   $.scrollify({ section : ".bg" });
